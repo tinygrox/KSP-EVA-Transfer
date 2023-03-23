@@ -67,7 +67,7 @@ namespace EVATransfer
 		{
 			WindowRect = new Rect(100, 100, 300, 120);
 			WindowOptions = new GUILayoutOption[3] { GUILayout.Width(300), GUILayout.Height(120), GUILayout.MaxHeight(120) };
-			WindowCaption = "EVA Transfer";
+			WindowCaption = "舱外输送"; // "EVA Transfer"
 
 			Visible = false;
 			DragEnabled = true;
@@ -259,7 +259,7 @@ namespace EVATransfer
 
 			if (!windowActive)
 			{
-				GUILayout.Label("Connection Severed; Transfer Terminated");
+				GUILayout.Label("连接以断开；输送已终止"); // "Connection Severed; Transfer Terminated"
 				dropDown = false;
 				return;
 			}
@@ -371,7 +371,7 @@ namespace EVATransfer
 			if (transferLFLOX)
 			{
 				Rect r = new Rect(36, 9, 20, 20);
-				if (GUI.Button(r, new GUIContent(EVATransfer_Startup.linkIcon, "Link LF and LOX"), EVATransfer_Startup.textureButton))
+				if (GUI.Button(r, new GUIContent(EVATransfer_Startup.linkIcon, "连接液体燃料和氧化剂"), EVATransfer_Startup.textureButton)) // "Link LF and LOX"
 				{
 					if (!transferActive)
 						toggleLFLOXTransfer();
@@ -441,10 +441,10 @@ namespace EVATransfer
 				r.height = 20;
 
 				if (dropDown)
-					GUI.Label(r, transferActive ? "Stop Transfer" : "Begin Transfer", EVATransfer_Startup.button);
+					GUI.Label(r, transferActive ? "停止输送" : "开始输送", EVATransfer_Startup.button); // "Stop Transfer""Begin Transfer"
 				else
 				{
-					if (GUI.Button(r, transferActive ? "Stop Transfer" : "Begin Transfer"))
+					if (GUI.Button(r, transferActive ? "停止输送" : "开始输送")) // "Stop Transfer""Begin Transfer"
 						toggleTransfer();
 				}
 			}
